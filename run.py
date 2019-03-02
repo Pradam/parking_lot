@@ -3,8 +3,6 @@
 from libs.utils import OperationsOnVehicle as ops
 
 
-if __name__ == '__main__':
-
     totalParkings = 0
     parkingDict = {}
 
@@ -13,6 +11,7 @@ if __name__ == '__main__':
         global totalParkings, parkingDict
 
         n = [val.strip() for val in _input.split()]
+
         data = n[0]
 
         if data == 'create_parking_lot':
@@ -35,15 +34,47 @@ if __name__ == '__main__':
                 print("Sorry, parking lot is full")
 
         elif data == 'status':
-            width = 5
             values = ops.status(totalParkings, parkingDict)
             if values:
+                print("{0} | {1} | {2}".format('Slot No.',
+                                               'Registration No.',
+                                               'Color'))
                 print(*values, sep="\n")
             else:
                 print("Sorry, parking lot is empty")
 
+        elif data == 'registration_numbers_for_cars_with_colour':
+            regNum = ops.registration_numbers_for_cars_with_colour(totalParkings,
+                                                                   parkingDict,
+                                                                   n[1])
+            if regNum:
+                print(', '.join(regNum))
+            else:
+                print('Sorry, No record found for color ', n[1])
+
+        elif data == 'slot_numbers_for_cars_with_colour':
+            slotNumber = ops.slot_numbers_for_cars_with_colour(totalParkings,
+                                                               parkingDict,
+                                                               n[1])
+            if slotNumber:
+                print(', '.join(slotNumber))
+            else:
+                print('Sorry, No record found for color ', n[1])
+
+        elif data == 'slot_number_for_registration_number':
+            slotNumber = ops.slot_number_for_registration_number(totalParkings,
+                                                                 parkingDict,
+                                                                 n[1])
+            if slotNumber:
+                print(*slotNumber)
+            else:
+                print('Sorry, No record found for Registration No. ', n[1])
+
+
+if __name__ == '__main__':
+
     while True:
-        prompt = input("Input: ")
+        prompt = input("Input Console: ")
         if prompt != 'exit':
             commands(prompt)
         else:
