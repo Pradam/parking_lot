@@ -77,9 +77,9 @@ def commands(_input):
 
 if __name__ == '__main__':
 
-    print('=' * 35)
+    print('*' * 70)
     print('Welcome to Parking Lot Console.')
-    print('=' * 35)
+    print('*' * 70)
     while True:
         prompt = input("Input: ")
         if prompt != 'exit':

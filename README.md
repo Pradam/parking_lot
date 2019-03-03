@@ -37,6 +37,10 @@ commands from that file. <br/>
  
 <br/>
 
+## Install Dependency
+
+- make sure you have 3.x.x high version to run this script if not install, Double click install_dependency(exe file) run as root user.
+
 ## Instructions to run: 
 
 - ./parking_lot.sh

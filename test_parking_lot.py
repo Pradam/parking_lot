@@ -18,7 +18,9 @@ class TestParkingLotFunction(unittest.TestCase):
 
 
     def setUp(self):
+        print('*' * 70)
         print('Starting Unit Test')
+        print('*' * 70)
         self.content = read_file_content()
         self.totalParkings = 0
         self.parkingDict = {}
@@ -124,7 +126,9 @@ class TestParkingLotFunction(unittest.TestCase):
         print(ele[0])
 
     def tearDown(self):
+        print('*' * 70)
         print('End of Testcase')
+        print('*' * 70)
 
 if __name__ == '__main__':
     unittest.main()
